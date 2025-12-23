@@ -11,6 +11,10 @@ npm install
 npx wrangler d1 create my_db
 ```
 
+- Would you like Wrangler to add on your behalf? (Y/n) -> Y (เพิ่มให้อัตโนมัติในสเต็ปต่อไป)
+- What binding name would you like to use? -> my_db
+- For local dev.. -> N
+
 output:
 ```
 🌀 Creating database...
@@ -20,7 +24,6 @@ database_name = "my_db"
 database_id   = "abcd1234-ef56-7890-aaaa-bbbbccccdddd"
 ```
 
-Copy database_id for the next step.
 
 ### 3. Go to wrangler.jsonc
 ```
@@ -39,7 +42,7 @@ Copy database_id for the next step.
 ### 4. Run the migrations
 
 ```
-npx wrangler d1 execute your-database-name --file=./src/schema.sql --remote
+npx wrangler d1 execute my_db --file=./src/schema.sql --remote
 ```
 
 ### 5. Start the development server
